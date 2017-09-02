@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="jrNBA">
+<head>
+	<meta charset="utf-8">
+	<title>JrNBA | Home</title>
+
+	<!-- meta property="og:title" content="JrNBA" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="JrNBA" / -->
+
+	<meta name="description" content="JrNBA">
+	<meta name="title" content="JrNBA | Home">
+	<meta name="author" content="JrNBA">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Montserrat:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body layout="column" ng-cloak>
+
+	<md-toolbar layout="row" class="mobile">
+		<div class="md-toolbar-tools">
+			<md-button ng-click="menU('izq')" hide-gt-sm class="md-icon-button">
+				<md-icon aria-label="Menu" md-svg-icon="assets/img/menu.svg"></md-icon>
+			</md-button>
+			<h1>jr.nba</h1>
+		</div>
+	</md-toolbar>
+
+	<div layout="row" flex>
+		<md-sidenav layout="column" ng-scrollbar class="scrollme md-sidenav-left md-whiteframe-z2" md-component-id="izq" md-is-locked-open="$mdMedia('gt-sm')">
+			<div class="scrollV">
+				<md-toolbar>
+					<h1 class="md-toolbar-tools"><a href="#home" ng-click="menU('izq')">jr.nba</a></h1>
+				</md-toolbar>
+				<nav class="navbar navbar-default">
+					<ul class="nav nav-pills nav-stacked">
+						<li ng-class="{open:oP=='A'}"><a href="#jrNBA" ng-click="menU('izq','A')">jr NBA</a></li>
+						<li ng-class="{open:oP=='B'}"><a href="#elBasketball" ng-click="menU('izq','B')">El Basketball</a>
+							<ul ng-init="oP='B'" ng-show="subElbasket" class="dropdown-menu">
+								<li><a href="#BasketballBasics">Basketball Basics</a></li>
+								<li><a href="#TheCourt">La Cancha</a></li>
+								<li><a href="#Dictionary">Diccionario</a></li>
+								<li><a href="#NBAstats">Jr. NBA Stats</a></li>
+							</ul>
+						</li>
+						<li ng-class="{open:oP=='C'}"><a href="#tutoriales" ng-click="menU('izq','C')">Tutoriales</a></li>
+						<li ng-class="{open:oP=='D'}"><a href="#clinicas" ng-click="menU('izq','D')">Clínicas</a></li>
+						<li ng-class="{open:oP=='E'}"><a href="#funZone" ng-click="menU('izq','E')">Fun Zone</a></li>
+						<li ng-class="{open:oP=='F'}"><a href="#areaCoaches" ng-click="menU('izq','F')">For Coaches</a>
+							<ul ng-init="oP='F'" ng-show="subElbasket" class="dropdown-menu">
+								<li><a href="#BasketballBasics">Basketball Basics</a></li>
+								<li><a href="#TheCourt">La Cancha</a></li>
+								<li><a href="#Dictionary">Diccionario</a></li>
+								<li><a href="#NBAstats">Jr. NBA Stats</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<img src="assets/img/links.jpg" alt="">
+				<div class="social">
+					<a href="#" target="_blank" class="fb"></a>
+					<a href="#" target="_blank" class="in"></a>
+					<a href="#" target="_blank" class="tw"></a>
+				</div>
+				<div class="legal">
+					<a href="#terminos" ng-click="menU('izq')">Términos y condiciones</a>
+					<a href="#privacidad" ng-click="menU('izq')">Políticas de privacidad</a>
+				</div>
+				<img src="assets/img/netshoes.png" alt="">
+				<img src="assets/img/g.png" alt="">
+				<img src="assets/img/telcel.png" alt="">
+				<img src="assets/img/infinitum.png" alt="">
+			</div>
+		</md-sidenav>
+		<div layout="column" flex id="content">
+			<md-progress-circular md-mode="indeterminate" class="md-warn md-hue-3" ng-show="isLoading"></md-progress-circular>
+			<div id="scrollA" ng-view></div>
+		</div>
+	</div>
+
+	<script src="assets/js/plugs.js"></script>
+	<script src="assets/js/m.js"></script>
+</body>
+</html>

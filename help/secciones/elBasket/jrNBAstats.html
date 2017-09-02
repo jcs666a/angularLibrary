@@ -1,0 +1,92 @@
+<div class="elBasketball">
+	<div class="hero half home">
+		<h1>Estadísticas de la jr. NBA</h1>
+	</div>
+	<md-toolbar class="md-menu-toolbar mimns">
+		<div layout="row">
+			<div>
+				<md-menu-bar>
+					<button ng-click="openC('uno')">Cómo leer las estadísticas</button>
+					<button ng-click="openC('dos')">Tres Maneras de Anotar</button>
+					<button ng-click="openC('tres')">Cómo Leer un Shot Chart</button>
+				</md-menu-bar>
+			</div>
+		</div>
+	</md-toolbar>
+
+	<md-content class="page-container">
+		<md-content ng-show="Tab=='uno'">
+			<h1 class="md-display-2">Cómo leer las estadísticas</h1>
+			<p>Durante cada partido de la NBA hay algunas personas llamadas estadísticos, sentados a los lados de la cancha llevando el registro de todo lo que pasa en ella.</p>
+			<p>¿Qué jugador lanzó el balón? ¿Fue una anotación o una falla? Si fue una falla ¿qué jugador recogió el rebote? ¿Algún defensa bloqueó el tiro? Si se hizo la anotación ¿hubo asistencia de algún compañero del equipo?</p>
+			<p>Los estadísticos ingresan toda esa información en una computadora mientras avanza el partido, con el fin de producir las estadísticas y la jugada a jugada de cada partido. Las estadísticas se actualizan dentro del estadio y se ponen en línea para que los fans puedan seguir el partido en tiempo real.</p>
+			<p>Leer las estadísticas es una manera sencilla para ver cuál equipo y jugadores tuvieron el mayor éxito en cualquier partido. Cada estadística de la NBA contiene la misma información, así que una vez que sabes lo que estás buscando, es fácil encontrarlo.</p>
+			<p>En la parte superior de la página se encontrará el puntaje del partido así como el desglose de la puntuación de cada cuarto. Otros elementos en esta lista incluyen asistencia en el partido, oficiales y tiempo de juego.</p>
+			<p>La parte principal de las estadísticas sigue a lo anterior y se presenta en un formato de tabla con las siguientes categorías. Cada jugador de ambos equipos se incluye en la lista (con los 5 titulares de cada equipo al principio), así como sus estadísticas de cada categoría junto a su nombre:</p>
+			<ul class="list-group">
+				<li class="list-group-item">MIN = Minutos</li>
+				<li class="list-group-item">FGM = Field-goals made = Anotaciones conseguidas</li>
+				<li class="list-group-item">FGA = Field-goals attempted = Intentos de anotación</li>
+				<li class="list-group-item">FG% = Field goal percentage = Porcentaje de anotaciones</li>
+				<li class="list-group-item">3PM = 3-pointers made = Anotaciones de 3 puntos conseguidas</li>
+				<li class="list-group-item">3PA = 3-pointers attempted = Intentos de anotación de 3 puntos</li>
+				<li class="list-group-item">3P% = 3-point percentage = Porcentaje de anotación de 3 puntos</li>
+				<li class="list-group-item">FTM = Free throws made = Tiros libres conseguidos</li>
+				<li class="list-group-item">FTA = Free throws attempted = Intentos de tiro libre</li>
+				<li class="list-group-item">FT% = Free throw percentage = Porcentaje de tiros libres</li>
+				<li class="list-group-item">OREB = Offensive rebounds = Rebotes ofensivos</li>
+				<li class="list-group-item">DREB = Defensive rebounds = Rebotes defensivos</li>
+				<li class="list-group-item">REB = Total rebounds = Rebotes totales</li>
+				<li class="list-group-item">AST = Assists = Asistencias</li>
+				<li class="list-group-item">TOV = Turnovers = Pérdida de balón</li>
+				<li class="list-group-item">STL = Steals = Balones robados</li>
+				<li class="list-group-item">BLK = Blocked shots = Tiros bloqueados</li>
+				<li class="list-group-item">PF = Personal fouls = Faltas personales</li>
+				<li class="list-group-item">PTS = Points scored = Puntos anotados</li>
+				<li class="list-group-item">+/- = Plus/Minus = Más/Menos</li>
+			</ul>
+			<p>Además de mostrar las estadísticas individuales de cada jugador, la línea inferior de cada tabla es el total de las estadísticas del jugador, lo cual arma las estadísticas del equipo para el partido.</p>
+			<p>Bajo las tablas de estadísticas de los jugadores encontrarás estadísticas adicionales del equipo (points in the paint, puntos de segunda oportunidad y puntos de contraataque) de ese partido en específico así como la mayor ventaja para cada equipo, el número de veces que la ventaja cambió de un equipo a otro o que el partido empató.</p>
+		</md-content>
+		<md-content ng-show="Tab=='dos'">
+			<h1 class="md-display-2">Tres Maneras de Anotar</h1>
+			<p>En el basketball, se anotan puntos cada vez que un jugador hace pasar el balón a través de la canasta. Esto puede darse con una gran variedad de tiros – coladas, clavadas, tiros en suspensión, tiros libres, tiros de 3 puntos y más. El número de puntos que se otorga al anotar se basa en el tipo de tiro y la distancia de la canasta a la que se lanzó.</p>
+			<h2>Canastas de 2 puntos</h2>
+			<p>El tipo más común de anotación en el basketball es la canasta de 2 puntos. Esto es cualquier tiro hecho desde dentro de la línea de 3 puntos (22’) y puede hacerse con un tiro en suspensión, colada o clavada.</p>
+			<h2>Canastas de 3 puntos</h2>
+			<p>La NBA introdujo las canastas de 3 puntos durante la temporada 1979-1980, con esto se premiaba a los jugadores por hacer tiros a larga distancia con un punto extra. Antes de eso, todos los tiros que ocurrían durante el tiempo de juego contaban por dos puntos.</p>
+			<p>La canasta de 3 puntos ha crecido en popularidad desde su debut y ahora es un punto focal en muchas ofensivas de la NBA. En cada uno de los últimos 3 años, el promedio de tiros de tres puntos se ha incrementado hasta alcanzar su punto más alto en la historia de la NBA.</p>
+			<h2>Tiros Libres</h2>
+			<p>Los tiros libres se otorgan cuando a un jugador se le comete una falta al tiempo de lanzar el balón. Si se falla el tiro, se le dan al lanzador dos tiros libres para anotaciones de 2 puntos y tres tiros libres para anotaciones de tres puntos.</p>
+			<p>Si se logra la anotación, la canasta cuenta y se le da al lanzador un tiro libre. A esto se le conoce comúnmente como “and-one” ya que el equipo obtiene el punto de la canasta y el del tiro libre.</p>
+			<p>Los tiros libres también se otorgan cuando el equipo que comete la falta es penalizado, lo cual sucede cuando dicho equipo comente al menos cinco faltas en un mismo cuarto. Empezando con la quinta falta, cualquier falta de balón defensivo o falta sin balón resulta en dos tiros libres para el equipo opuesto, sin importar si están lanzando el balón o no.</p>
+		</md-content>
+		<md-content ng-show="Tab=='tres'">
+			<h1 class="md-display-2">Cómo Leer un Shot Chart</h1>
+			<p>La mayoría de los jugadores tienen puntos predilectos en la cancha desde donde les gusta tirar – áreas en las que están más cómodos y se sienten confiados para hacer un tiro.</p>
+			<p>Por ejemplo, tenemos el pull up jumper de Chris Paul desde la esquina de tiro libre, el tiro a tablero de Tim Duncan desde el bloque izquierdo y por supuesto, el tiro de 3 puntos de Stephen Curry desde la esquina.</p>
+			<p>Durante los Playoffs del 2015, Curry tiraba casi en automático desde la esquina izquierda anotando en 14 de sus 18 intentos con 12 seguidos desde esa pequeña parte de la cancha.</p>
+			<p>Estas estadísticas están al alcance de todos en forma de shot charts. Cuando las estadísticas cuentan el número de anotaciones y fallas a lo largo del juego, los shot charts van más allá al ubicar el punto donde se hace cada tiro.</p>
+			<p>Con esta información, fans y analistas pueden señalar dónde los jugadores y equipos son más efectivos con sus tiros.</p>
+			<p>Además de mostrar los números de tiros del jugador desde cada zona, también hay indicadores de color para mostrar cómo este jugador específico se compara con el resto de la liga desde esa área de la cancha.</p>
+			<ul class="list-group">
+				<li class="list-group-item">Zonas verdes: El jugador lanza mejor desde determinada zona que el promedio de la liga.</li>
+				<li class="list-group-item">Zonas amarillas: El jugador lanza en un nivel equiparable al promedio de la liga desde cierta zona.</li>
+				<li class="list-group-item">Zonas rojas: El jugador lanza por debajo del promedio de la liga desde determinada zona.</li>
+			</ul>
+			<p>Hay una variedad de opciones de shot charts que pueden darnos mayor información. Primero, podemos activar los indicadores de tiro que mostrarán un punto de color por cada tiro realizado – verde es para anotaciones y rojo es para fallas.</p>
+			<p>También tienes la opción de cómo desglosar las zonas de la cancha. Hay dos maneras de visualizar un shot chart: usando zonas de tiro básicas y zonas de tiro avanzadas.</p>
+			<p>Estas son las zonas básicas de tiro</p>
+			<ul class="list-group">
+				<li class="list-group-item">Esquina 3: El área pequeña a la izquierda y derecha, respectivamente, de la cancha, cerca de la línea de fondo. La línea de 3 puntos está unas cuantas pulgadas más cerca de la canasta en las esquinas.</li>
+				<li class="list-group-item">Zona (In-the-paint): Estos son tiros realizados dentro de la llave, es decir, el rectángulo cerca de la canasta que mide 15’ hasta la línea de tiro libre y 16’ de ancho.</li>
+				<li class="list-group-item">Área Restringida: El área de 4 pies que rodea directamente la canasta, marcada con un semicírculo en la zona.</li>
+				<li class="list-group-item">Rango medio: Cualquier tiro que viene desde fuera de la Zona pero dentro de la línea de 3 puntos.</li>
+				<li class="list-group-item">Above the Break 3: Cualquier tiro de 3 puntos que no se haga desde las esquinas.</li>
+				<li class="list-group-item">Pista defensiva: Cualquier tiro realizado desde más allá de la media cancha, más comúnmente al final de cada cuarto para vencer al reloj.</li>
+			</ul>
+			<p>También existe la opción de desglosar y analizar más detenidamente la cancha y usar las denominadas zonas avanzadas. Estas zonas proporcionan mayor exactitud en las ubicaciones al esquematizar los tiros en el shot chart.</p>
+		</md-content>
+	</md-content>
+</div>
+
