@@ -41,6 +41,23 @@ libraryApp.controller('controlerHome',function($scope,$filter,endPoints,$rootSco
 			return book.id !== id;
 		});
 	};
+	$scope.returnBook=function(id){
+		angular.forEach($rootScope.books, function(book,index){
+			if(book.id===id){
+				book.books++;
+				book.borrowed--;
+			}
+		});
+	};
+	$scope.borrowBook=function(id){
+		angular.forEach($rootScope.books, function(book,index){
+			if(book.id===id){
+				book.books--;
+				book.borrowed++;
+			}
+		});
+	};
+
 	endPoints.getBooks().then(function onSuccess(response){
 		$rootScope.books = response.data;
 		$rootScope.booksLength = response.data.length;
@@ -50,6 +67,7 @@ libraryApp.controller('controlerHome',function($scope,$filter,endPoints,$rootSco
 });
 
 libraryApp.controller('controler404',function($scope){
+	console.log('Page not found');
 });
 
 libraryApp.service('endPoints',function($http){

@@ -1,14 +1,14 @@
 <div class="row">
 	<div class="col-6 col-md-4 col-lg-3" dir-paginate="book in books|filter:searchText|itemsPerPage:4">
-		<div class="card">
+		<div ng-class="{'not-available': book.books==0}" class="card">
 			<img class="card-img-top" ng-src="assets/img/books/{{book.image}}" alt="{{book.title}}">
 			<div class="card-body">
 				<h4 class="card-title">{{book.title}}<br><small class="text-muted">{{book.author}}</small></h4>
-				<p class="card-text">{{book.description}}<br><small class="text-muted">{{book.year}} | {{book.books}} | {{book.borrowed}}</small></p>
+				<p class="card-text">{{book.description}}<br><small class="text-muted">{{book.year}} | Stock {{book.books}} | Borrowed {{book.borrowed}}</small></p>
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<button data-ng-click="removeBook(book.id)" class="btn btn-secondary"><i class="fa fa-trash"></i></button>
-					<button type="button" class="btn btn-secondary"><i class="fa fa-calendar-plus-o"></i></button>
-					<button type="button" class="btn btn-secondary"><i class="fa fa-calendar-minus-o"></i></button>
+					<button ng-click="borrowBook(book.id)" ng-disabled="!book.books" type="button" class="btn btn-secondary"><i class="fa fa-plus"></i></button>
+					<button ng-click="returnBook(book.id)" ng-disabled="!book.borrowed" type="button" class="btn btn-secondary"><i class="fa fa-minus"></i></button>
 				</div>
 			</div>
 		</div>

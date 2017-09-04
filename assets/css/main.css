@@ -27,6 +27,18 @@ button{
 .card{
 	margin-bottom:20px;
 }
+.card.not-available:before{
+	content: 'Not available';
+	display: block;
+	width: 100%;
+	height: calc(100% - 78px);
+	z-index: 9;
+	background-color: rgba(0,0,0,.6);
+	position: absolute;
+	color: #fff;
+	font-size: 3em;
+	text-align: center;
+}
 h4.card-title{
 	position: absolute;
 	top: 0;
