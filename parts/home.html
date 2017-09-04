@@ -7,9 +7,10 @@
 				<h6 class="text-info">{{book.category}}</h6>
 				<p class="card-text">{{book.description}}<br><small class="text-muted">{{book.year}} | Stock {{book.books}} | Borrowed {{book.borrowed}}</small></p>
 				<div class="btn-group" role="group" aria-label="Basic example">
+					<button class="btn btn-secondary"><i class="fa fa-edit"></i></button>
 					<button data-ng-click="removeBook(book.id)" class="btn btn-secondary"><i class="fa fa-trash"></i></button>
-					<button ng-click="borrowBook(book.id)" ng-disabled="!book.books" type="button" class="btn btn-secondary"><i class="fa fa-plus"></i></button>
-					<button ng-click="returnBook(book.id)" ng-disabled="!book.borrowed" type="button" class="btn btn-secondary"><i class="fa fa-minus"></i></button>
+					<button ng-click="borrowBook(book.id)" ng-disabled="!book.books" class="btn btn-secondary"><i class="fa fa-plus"></i></button>
+					<button ng-click="returnBook(book.id)" ng-disabled="!book.borrowed" class="btn btn-secondary"><i class="fa fa-minus"></i></button>
 				</div>
 			</div>
 		</div>
