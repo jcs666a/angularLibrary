@@ -73,29 +73,31 @@
 				<button class="close" ng-click="openModalAddBook()"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<div class="form-group">
-					<label>Title</label>
-					<input type="text" class="form-control" placeholder="Book title" ng-model="newBookData.title">
-				</div>
-				<div class="form-group">
-					<label>Author</label>
-					<input type="text" class="form-control" placeholder="Book author" ng-model="newBookData.author">
-				</div>
-				<div class="form-group">
-					<label>Category</label>
-					<input type="text" class="form-control" placeholder="Book category" ng-model="newBookData.category">
-				</div>
-				<div class="form-group">
-					<label>Description</label>
-					<input type="text" class="form-control" placeholder="Book description" ng-model="newBookData.description">
-				</div>
-				<div class="form-group">
-					<label>Year</label>
-					<input type="text" class="form-control" placeholder="Book year" ng-model="newBookData.year">
-				</div>
+				<form name="addBookForm">
+					<div class="form-group">
+						<label>Title</label>
+						<input type="text" class="form-control" placeholder="Book title" ng-model="newBookData.title" required>
+					</div>
+					<div class="form-group">
+						<label>Author</label>
+						<input type="text" class="form-control" placeholder="Book author" ng-model="newBookData.author" required>
+					</div>
+					<div class="form-group">
+						<label>Category</label>
+						<input type="text" class="form-control" placeholder="Book category" ng-model="newBookData.category" required>
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<textarea class="form-control" rows="4" placeholder="Book description" ng-model="newBookData.description" required></textarea>
+					</div>
+					<div class="form-group">
+						<label>Year</label>
+						<input type="text" class="form-control" placeholder="Book year" ng-model="newBookData.year" required>
+					</div>
+				</form>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-primary" ng-click="addBook()">Save</button>
+				<button class="btn btn-primary" ng-disabled="addBookForm.$invalid" ng-click="addBook()">Save</button>
 				<button class="btn btn-secondary" ng-click="openModalAddBook()">Cancel</button>
 			</div>
 		</div>

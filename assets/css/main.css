@@ -9,6 +9,12 @@ body *{
 button{
 	cursor:pointer;
 }
+button:disabled{
+	cursor:not-allowed;
+	background-color: #eee !important;
+	color: #aaa;
+	border-color: #aaa !important;
+}
 
 .nav-item a{
 	cursor:pointer;
