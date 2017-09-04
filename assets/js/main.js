@@ -15,7 +15,6 @@ libraryApp.controller('mainCtrl',function($rootScope,$scope,resets){
 	$rootScope.searchText = '';
 	$scope.openedMenu = false;
 	$scope.openedModalAddBook = false;
-	$scope.openedModalEditBook = false;
 	$scope.newBookData = resets.resetNewBook();
 
 	$rootScope.scrolTo=function scrollIntoView(eleID){
@@ -39,7 +38,13 @@ libraryApp.controller('mainCtrl',function($rootScope,$scope,resets){
 
 });
 
-libraryApp.controller('controlerHome',function($scope,$filter,endPoints,$rootScope,){
+libraryApp.controller('controlerHome',function($rootScope,$scope,endPoints,resets){
+	$scope.openedModalEditBook = false;
+	$scope.editBookData = resets.resetNewBook();
+
+	$scope.openModalEditBook = function(){
+		$scope.openedModalEditBook = !$scope.openedModalEditBook;
+	};
 	$scope.removeBook=function(id){
 		$rootScope.books = $rootScope.books.filter(function(book){
 			return book.id !== id;
@@ -60,6 +65,11 @@ libraryApp.controller('controlerHome',function($scope,$filter,endPoints,$rootSco
 				book.borrowed++;
 			}
 		});
+	};
+	$scope.editBook=function(book){
+		$scope.editBookData = book;
+		$scope.openedModalEditBook = true;
+		console.log(book);
 	};
 
 	endPoints.getBooks().then(function onSuccess(response){
