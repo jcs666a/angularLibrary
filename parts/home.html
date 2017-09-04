@@ -29,7 +29,7 @@
 				<button class="close" ng-click="openModalEditBook()"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<form name="addBookForm">
+				<form name="editBookForm">
 					<div class="form-group">
 						<label>Title</label>
 						<input type="text" class="form-control" placeholder="Book title" ng-model="editBookData.title" required>
@@ -53,7 +53,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-primary" ng-click="saveEditBook(editBookData.id)" ng-disabled="addBookForm.$invalid">Save</button>
+				<button class="btn btn-primary" ng-click="saveEditBook(editBookData.id)" ng-disabled="editBookForm.$invalid">Save</button>
 				<button class="btn btn-secondary" ng-click="openModalEditBook()">Cancel</button>
 			</div>
 		</div>
