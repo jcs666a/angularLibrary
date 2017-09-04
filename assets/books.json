@@ -1,0 +1,93 @@
+[
+	{
+		"author":"Andrzej Sapkowski",
+		"books":10,
+		"borrowed":2,
+		"category":"Acción y Aventura",
+		"description":"Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets are the multifarious monsters and vile fiends that ravage the land and attack the innocent.",
+		"id":1,
+		"image":"1.jpg",
+		"title":"Sword of Destiny",
+		"year":"2015"
+	},{
+		"author":"George R. R. Martin",
+		"books":10,
+		"borrowed":0,
+		"category":"Acción y Aventura",
+		"description":"If the past is prologue, then George R. R. Martin s masterwork the most inventive and entertaining fantasy saga of our time warrants one hell of an introduction. At long last, it has arrived with The World of Ice & Fire.",
+		"id":2,
+		"image":"2.jpg",
+		"title":"The World of Ice & Fire",
+		"year":"2014"
+	},{
+		"author":"Neil Gaiman",
+		"books":10,
+		"borrowed":4,
+		"category":"Acción y Aventura",
+		"description":"Newly updated and expanded with the author’s preferred text. A modern masterpiece from the multiple-award-winning master of innovative fiction, Neil Gaiman. First published in 2001, American Gods became an instant classic, lauded for its brilliant synthesis of \"mystery, satire, sex, horror, and poetic prose\"",
+		"id":3,
+		"image":"3.jpg",
+		"title":"American gods: The tenth.",
+		"year":"2016"
+	},{
+		"author":"Ricardo Palma",
+		"books":10,
+		"borrowed":1,
+		"category":"Cuentos",
+		"description":"Ricardo Palma es el cronista clásico de la Lima vieja, aquella que con sus conflictos y contradicciones marca y centraliza la vida de Perú. En Palma hay un narrador nato, un contador de historias que encuentra en el devenir del tiempo un filón que explota durante toda su vida.",
+		"id":4,
+		"image":"4.jpg",
+		"title":"Tradiciones peruanas",
+		"year":"2017"
+	},{
+		"author":"David Foster Wallace",
+		"books":10,
+		"borrowed":0,
+		"category":"Cuentos",
+		"description":"In this thought-provoking and playful short story collection, David Foster Wallace nudges at the boundaries of fiction with inimitable wit and seductive intelligence.",
+		"id":5,
+		"image":"5.jpg",
+		"title":"Brief Interviews With Hideous Men",
+		"year":"2000"
+	},{
+		"author":"Harlan Ellison",
+		"books":10,
+		"borrowed":3,
+		"category":"Cuentos",
+		"description":"The cycle begins with \"Eggsucker,\" which chronicles the early years of the association between fourteen-year-old loner Vic and his brilliant, telepathic dog.",
+		"id":6,
+		"image":"6.jpg",
+		"title":"Vic and Blood",
+		"year":"2014"
+	},{
+		"author":"Andy Weir",
+		"books":10,
+		"borrowed":6,
+		"category":"Ciencia Ficción",
+		"description":"Six days ago, astronaut Mark Watney became one of the first people to walk on Mars. Now, he's sure he'll be the first person to die there.",
+		"id":7,
+		"image":"7.jpg",
+		"title":"The Martian",
+		"year":"2014"
+	},{
+		"author":"James Dashner",
+		"books":10,
+		"borrowed":1,
+		"category":"Ciencia Ficción",
+		"description":"The first book in the New York Times bestselling Maze Runner seriesThe Maze Runner is a modern classic, perfect for fans of The Hunger Games and Divergent. When Thomas wakes up in the lift, the only thing he can remember is his first name. His memory is blank.",
+		"id":8,
+		"image":"8.jpg",
+		"title":"VIRUS LETAL, MAZE RUNNER",
+		"year":"2015"
+	},{
+		"author":"Carlos Ruiz Zafon",
+		"books":10,
+		"borrowed":0,
+		"category":"Ciencia Ficción",
+		"description":"Quince anos mas tarde, la memoria de aquel dia ha vuelto a mi. He visto a aquel muchacho vagando entre las brumas de la estacion de Francia y el nombre de Marina se ha encendido de nuevo como una herida fresca.",
+		"id":9,
+		"image":"9.jpg",
+		"title":"Marina",
+		"year":"2014"
+	}
+]

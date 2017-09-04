@@ -1,0 +1,10 @@
+
+body *{
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.card{
+	margin-bottom:20px;
+}

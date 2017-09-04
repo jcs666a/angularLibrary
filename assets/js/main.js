@@ -1,85 +1,61 @@
-var libraryApp=angular.module('libraryApp',['ngMaterial','ngRoute','ngProgress','ngMessages']);
+var libraryApp=angular.module('libraryApp',['ngRoute']);
 
-libraryApp.config(function($routeProvider,$mdProgressCircularProvider){
-	$mdProgressCircularProvider.configure({
-		progressSize:100,
-		strokeWidth:10,
-		duration:800
-	});
+libraryApp.config(function($routeProvider){
 	$routeProvider
 		.when('/',{						templateUrl :'parts/home.html',
 										controller  :'controlerHome'
-		}).when('/home',{				templateUrl :'secciones/home.html',
+		}).when('/home',{				templateUrl :'parts/home.html',
 										controller  :'controlerHome'
 		}).otherwise({					templateUrl :'parts/404.html',
 										controller  :'controler404'
 		});
 });
 
-
-libraryApp.run(function($rootScope,$mdSidenav,ngProgressFactory){
-
-	$rootScope.progressbar=ngProgressFactory.createInstance();
-	$rootScope.progressbar.setColor('#ff00ff');
-	$rootScope.progressbar.setHeight('5px');
-/*
-	$rootScope.scrolA=function scrollIntoView(eleID){
-		var e=document.getElementById(eleID);
-		if(!!e && e.scrollIntoView)
-			e.scrollIntoView();
-	}
-*/
-	$rootScope.$on('$routeChangeStart',function(){
-		$rootScope.progressbar.start();
-		$rootScope.isLoading=true;
-	});
-	$rootScope.$on('$routeChangeSuccess',function(){
-		$rootScope.progressbar.complete();
-		$rootScope.isLoading=false;
-	});
-/*
-	$rootScope.menU=function(x,i){
-		$mdSidenav(x).toggle();
-		$rootScope.oP=i;
-		$rootScope.subAreaCoaches=false;
-		$rootScope.subElbasket=false;
-		if(i=='B'){
-			$rootScope.subElbasket=!$rootScope.subElbasket;
-		}
-		if(i=='C'){
-			$rootScope.subAreaCoaches=!$rootScope.subAreaCoaches;
-			$rootScope.openB=true;
-		}
+libraryApp.controller('mainCtrl',function($rootScope,$scope){
+	$rootScope.searchText='';
+	$scope.addBook=function(){
+		console.log('X');
+		$rootScope.booksLength++;
+		$rootScope.books.push(
+			{
+				"author":"Andrzej Sapkowski",
+				"books":10,
+				"borrowed":2,
+				"category":"Acción y Aventura",
+				"description":"Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets are the multifarious monsters and vile fiends that ravage the land and attack the innocent.",
+				"id":$rootScope.booksLength,
+				"image":"1.jpg",
+				"title":"Sword of Destiny",
+				"year":"2015"
+			}
+		);
 	};
-*/
+
 });
 
-libraryApp.controller('controlerHome',function($scope){
+libraryApp.controller('controlerHome',function(endPoints,$rootScope,$scope){
+
+	$scope.removeBook=function(id){
+		$rootScope.books = $rootScope.books.filter(function(book){
+			return book.id !== id;
+		});
+	};
+
+	endPoints.getBooks().then(function onSuccess(response){
+		console.log(response.data);
+		$rootScope.books = response.data;
+		$rootScope.booksLength = response.data.length;
+	}).catch(function onError(response){
+		console.log(response);
+	});
+
 });
 
 libraryApp.controller('controler404',function($scope){
 });
 
-/*
-libraryApp.service('GetLibros', function(){
-	return {
-		getData: getData
-	}
-	function getData () {
-		var datos = [
-			{ titulo: "Producto 1", precio: 2 },
-			{ titulo: "Producto 2", precio: 1.5 },
-			{ titulo: "Producto 3", precio: 4.2 },
-			{ titulo: "Producto 4", precio: 3 },
-			{ titulo: "Producto 5", precio: 2.5 }
-		];
-		return datos;
+libraryApp.service('endPoints',function($http){
+	this.getBooks = function(){
+		return $http.get('assets/books.json');
 	}
 });
-
-libraryApp.controller('AppCtrl',$scope, function(){
-	console.log('Webos puto');
-	$scope.productos = GetLibros.getData();
-
-});
-*/
