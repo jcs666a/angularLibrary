@@ -66,10 +66,21 @@ libraryApp.controller('controlerHome',function($rootScope,$scope,endPoints,reset
 			}
 		});
 	};
-	$scope.editBook=function(book){
-		$scope.editBookData = book;
+	$scope.saveEditBook=function(id){
+		angular.forEach($rootScope.books, function(book,index){
+			if(book.id===id){
+				book.title=$scope.editBookData.title;
+				book.author=$scope.editBookData.author;
+				book.category=$scope.editBookData.category;
+				book.description=$scope.editBookData.description;
+				book.year=$scope.editBookData.year;
+			}
+		});
+		$scope.openedModalEditBook = false;
+	}
+	$scope.editBookModal=function(book){
+		$scope.editBookData = angular.copy(book);
 		$scope.openedModalEditBook = true;
-		console.log(book);
 	};
 
 	endPoints.getBooks().then(function onSuccess(response){
