@@ -13,6 +13,7 @@ libraryApp.config(function($routeProvider){
 
 libraryApp.controller('mainCtrl',function($rootScope,$scope,resets){
 	$rootScope.searchText = '';
+	$scope.openedMenu = false;
 	$scope.openedModalAddBook = false;
 	$scope.openedModalEditBook = false;
 	$scope.newBookData = resets.resetNewBook();
@@ -31,6 +32,9 @@ libraryApp.controller('mainCtrl',function($rootScope,$scope,resets){
 	};
 	$scope.openModalAddBook = function(){
 		$scope.openedModalAddBook = !$scope.openedModalAddBook;
+	};
+	$scope.openMenu = function(){
+		$scope.openedMenu = !$scope.openedMenu;
 	};
 
 });

@@ -18,11 +18,13 @@
 <nav class="navbar navbar-expand-md">
 	<div class="container">
 		<a class="navbar-brand" href="./"></a>
-		<button class="navbar-toggler" type="button">
-			<span class="navbar-toggler-icon"></span>
+		<button ng-click="openMenu()" class="navbar-toggler" type="button">
+			<span class="navbar-toggler-icon">
+				<i class="fa fa-bars"></i>
+			</span>
 		</button>
 
-		<div class="collapse navbar-collapse">
+		<div ng-class="{'open': openedMenu}" class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
 					<a class="nav-link" ng-click="openModalAddBook()">Add book</a>
