@@ -4,6 +4,7 @@
 			<img class="card-img-top" ng-src="assets/img/books/{{book.image}}" alt="{{book.title}}">
 			<div class="card-body">
 				<h4 class="card-title">{{book.title}}<br><small class="text-muted">{{book.author}}</small></h4>
+				<h6 class="text-info">{{book.category}}</h6>
 				<p class="card-text">{{book.description}}<br><small class="text-muted">{{book.year}} | Stock {{book.books}} | Borrowed {{book.borrowed}}</small></p>
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<button data-ng-click="removeBook(book.id)" class="btn btn-secondary"><i class="fa fa-trash"></i></button>
