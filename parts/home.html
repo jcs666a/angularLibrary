@@ -1,12 +1,20 @@
 <div class="row">
-	<div class="col-6 col-sm-4 col-lg-3" ng-repeat="book in books | filter:searchText">
+	<div class="col-6 col-md-4 col-lg-3" dir-paginate="book in books|filter:searchText|itemsPerPage:4">
 		<div class="card">
 			<img class="card-img-top" ng-src="assets/img/books/{{book.image}}" alt="{{book.title}}">
 			<div class="card-body">
 				<h4 class="card-title">{{book.title}}<br><small class="text-muted">{{book.author}}</small></h4>
-				<p class="card-text">{{book.description}}</p>
-				<button class="btn btn-primary" data-ng-click="removeBook(book.id)">Delete</button>
+				<p class="card-text">{{book.description}}<br><small class="text-muted">{{book.year}} | {{book.books}} | {{book.borrowed}}</small></p>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<button data-ng-click="removeBook(book.id)" class="btn btn-secondary"><i class="fa fa-trash"></i></button>
+					<button type="button" class="btn btn-secondary"><i class="fa fa-calendar-plus-o"></i></button>
+					<button type="button" class="btn btn-secondary"><i class="fa fa-calendar-minus-o"></i></button>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div>
+	<dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
 </div>

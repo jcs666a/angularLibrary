@@ -1,4 +1,4 @@
-var libraryApp=angular.module('libraryApp',['ngRoute']);
+var libraryApp=angular.module('libraryApp',['ngRoute','angularUtils.directives.dirPagination']);
 
 libraryApp.config(function($routeProvider){
 	$routeProvider
@@ -11,44 +11,42 @@ libraryApp.config(function($routeProvider){
 		});
 });
 
-libraryApp.controller('mainCtrl',function($rootScope,$scope){
-	$rootScope.searchText='';
-	$scope.addBook=function(){
-		console.log('X');
+libraryApp.controller('mainCtrl',function($rootScope,$scope,resets){
+	$rootScope.searchText = '';
+	$scope.openedModalAddBook = false;
+	$scope.openedModalEditBook = false;
+	$scope.newBookData = resets.resetNewBook();
+
+	$rootScope.scrolTo=function scrollIntoView(eleID){
+		var e=document.getElementById(eleID);
+		if(!!e && e.scrollIntoView)
+			e.scrollIntoView();
+	}
+	$scope.addBook = function(){
 		$rootScope.booksLength++;
-		$rootScope.books.push(
-			{
-				"author":"Andrzej Sapkowski",
-				"books":10,
-				"borrowed":2,
-				"category":"Acción y Aventura",
-				"description":"Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets are the multifarious monsters and vile fiends that ravage the land and attack the innocent.",
-				"id":$rootScope.booksLength,
-				"image":"1.jpg",
-				"title":"Sword of Destiny",
-				"year":"2015"
-			}
-		);
+		$scope.openedModalAddBook = false;
+		$scope.newBookData.id = $rootScope.booksLength;
+		$rootScope.books.push($scope.newBookData);
+		$scope.newBookData = resets.resetNewBook();
+	};
+	$scope.openModalAddBook = function(){
+		$scope.openedModalAddBook = !$scope.openedModalAddBook;
 	};
 
 });
 
-libraryApp.controller('controlerHome',function(endPoints,$rootScope,$scope){
-
+libraryApp.controller('controlerHome',function($scope,$filter,endPoints,$rootScope,){
 	$scope.removeBook=function(id){
 		$rootScope.books = $rootScope.books.filter(function(book){
 			return book.id !== id;
 		});
 	};
-
 	endPoints.getBooks().then(function onSuccess(response){
-		console.log(response.data);
 		$rootScope.books = response.data;
 		$rootScope.booksLength = response.data.length;
 	}).catch(function onError(response){
 		console.log(response);
 	});
-
 });
 
 libraryApp.controller('controler404',function($scope){
@@ -59,3 +57,20 @@ libraryApp.service('endPoints',function($http){
 		return $http.get('assets/books.json');
 	}
 });
+
+libraryApp.service('resets',function(){
+	this.resetNewBook = function(){
+		return {
+			author:'',
+			books:10,
+			borrowed:0,
+			category:'',
+			description:'',
+			id:0,
+			image:'dummy.png',
+			title:'',
+			year:''
+		}
+	}
+});
+

@@ -1,3 +1,4 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 
 body *{
 	font-smoothing: antialiased;
@@ -5,6 +6,70 @@ body *{
 	-moz-osx-font-smoothing: grayscale;
 }
 
+button{
+	cursor:pointer;
+}
+
+.nav-item a{
+	cursor:pointer;
+	color:#007bff !important;
+}
+
+.navbar-brand{
+	width:80px;
+	height:40px;
+	background-image:url('../img/logo.jpg');
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:left center;
+}
+
 .card{
 	margin-bottom:20px;
+}
+h4.card-title{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	background-color: rgba(255,255,255,.9);
+	padding: 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.modal.fade.show{
+	background-color:rgba(0,0,0,.5);
+	display:block;
+}
+
+.pagination{
+	margin:10px 0;
+	justify-content:center;
+}
+.pagination li{
+	display:inline-block;
+	padding:3px 8px;
+	background-color:#007bff;
+	margin:0 4px;
+}
+.pagination li a{
+	color:#fff;
+}
+.pagination li.disabled{
+	background-color:#eee;
+}
+.pagination li.disabled a{
+	color:#666;
+	cursor:not-allowed;
+}
+
+footer{
+	border-top:1px solid #ccc;
+	padding-top: 30px;
+}
+footer img{
+	max-width:100%;
+	max-height:70px;
 }
